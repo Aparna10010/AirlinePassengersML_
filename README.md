@@ -1,100 +1,114 @@
+Absolutely! Here's a polished and professional **README.md** — ideal for showcasing your project on GitHub or your portfolio 👇
+
+---
 
 # ✈️ Airline Customer Satisfaction Prediction
 
-A machine learning project focused on predicting customer satisfaction based on flight service features. This project deals with an **imbalanced classification problem**, applies **SMOTE**, performs **feature selection**, and uses **model tuning** to improve performance.
+This project focuses on predicting whether an airline passenger is satisfied with their experience based on various in-flight and service-related features. It combines **SQL-based data exploration**, **feature engineering**, **machine learning**, and **class imbalance handling** using **SMOTE**, all wrapped in a reusable ML pipeline.
 
 ---
 
-## 📌 Problem Statement
+## 🔍 Overview
 
-The goal is to predict whether a customer is **satisfied or not** based on various service and flight-related features. The dataset is imbalanced — the number of satisfied vs unsatisfied customers is skewed.
-
----
-
-## 🧪 Dataset Overview
-
-- Source: [Kaggle / Airline Satisfaction Dataset](https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction)
-- Total rows: ~100k+
-- Features include: `Inflight_wifi_service`, `Flight_Distance`, `Online_boarding`, `Seat_comfort`, etc.
-- Target variable: `Satisfaction (0 = Not Satisfied, 1 = Satisfied)`
+- **Goal**: Predict customer satisfaction using airline service data  
+- **Tech Stack**: Python, SQL, Pandas, Scikit-learn, Seaborn, Matplotlib  
+- **ML Models**: Logistic Regression, Random Forest (with hyperparameter tuning)  
+- **Imbalance Handling**: SMOTE  
+- **Evaluation Metrics**: Accuracy, F1 Score, AUPRC  
+- **Output**: Final model saved using `pickle` for future use or deployment
 
 ---
 
-## 📊 Summary Slides
+## 📁 Project Structure
 
-📄 [View Project Summary Slides (PDF)](./Project_Summary.pdf)  
-
----
-
-## 🧠 Key Steps
-
-- ✔️ Data Cleaning & Feature Engineering
-- ✔️ Exploratory Data Analysis & Visualization
-- ✔️ One-Hot Encoding
-- ✔️ Feature Selection using RFE
-- ✔️ Handling Imbalance with **SMOTE**
-- ✔️ Model Training: Logistic Regression & Random Forest
-- ✔️ Hyperparameter Tuning using **RandomizedSearchCV**
-- ✔️ Evaluation with Accuracy, F1, AUPRC
-- ✔️ Pipeline creation & model serialization
+```
+📦 Airline-Customer-Satisfaction
+├── data/
+│   └── airline_data.csv              # Original dataset
+├── sql/
+│   └── queries.sql                   # SQL queries used for data insights
+├── notebooks/
+│   └── main_analysis.ipynb          # Complete analysis & model building
+├── final_rf_pipeline.pkl            # Final trained ML pipeline (Scaler + SMOTE + RF)
+├── summary_slides.pptx              # Summary presentation (optional)
+└── README.md
+```
 
 ---
 
-## ⚙️ Model Performance
+## 📊 Key Highlights
 
-### ✅ Before SMOTE (Logistic Regression):
-- Accuracy: `93%`
-- F1 (Class 1): `0.73`
-- AUPRC: `~0.79`
+✅ **Data Querying using SQL**:  
+Initial filtering, aggregations, and insights using SQL.
 
-### ✅ After SMOTE:
-- Accuracy: `95%`
-- F1 (Class 1): `0.84`
-- AUPRC: `0.926`
+✅ **Data Preprocessing**:
+- Handling nulls, feature scaling
+- Encoding categorical variables (One-Hot Encoding)
+- Engineered features: `Total_Delay`, `avg_service_rating`, etc.
 
-### 🌲 Final Random Forest Model (after SMOTE + Tuning):
-- Accuracy: `95.2%`
-- F1 (Class 1): `0.84`
-- AUPRC: `0.91`
+✅ **Visualization & Insights**:
+- Service rating distributions
+- Boxplot: Arrival delay vs Satisfaction
+- Satisfaction vs Type of Travel, Gender, and Class
 
----
+✅ **Modeling & Imbalance Handling**:
+- Applied **SMOTE** to tackle imbalanced classes  
+- Feature selection using **RFE**
+- Compared **Logistic Regression** & **Random Forest**
+- Tuned RF with **RandomizedSearchCV**
+- Evaluated with **Classification Report** + **AUPRC Curve**
 
-## 🔥 Visual Insights
-
-| Feature Importance | Confusion Matrix | AUPRC Curve |
-|--------------------|------------------|-------------|
-| ✅ Online Boarding | ✅ Clear Class Separation | ✅ High precision under recall |
-
----
-
-## 🧾 Tech Stack
-
-- Python, Pandas, NumPy, Matplotlib, Seaborn
-- scikit-learn, imblearn (SMOTE)
-- RandomForest, LogisticRegression
-- Pickle (for saving model pipeline)
+✅ **Final Model**:
+- Packaged as a complete pipeline (`Scaler + SMOTE + RF`)
+- Exported using `pickle` for future predictions
 
 ---
 
-## 💾 Model Deployment
+## 📈 Model Performance
 
-You can load the saved pipeline directly and use it for predictions:
+| Model                          | Accuracy | F1 Score (Class 1) | AUPRC |
+|-------------------------------|----------|---------------------|--------|
+| Logistic Regression (SMOTE)   | 84.1%    | 0.59                | 0.79   |
+| Random Forest (SMOTE + Tuned) | **95.3%**| **0.84**            | **0.92** |
+
+---
+
+## 🔧 How to Use the Model
 
 ```python
-import pickle
-with open("final_pipeline_rf.pkl", "rb") as f:
+# Load the pipeline
+with open("final_rf_pipeline.pkl", "rb") as f:
     model = pickle.load(f)
-    
-predictions = model.predict(X_test)---
+
+# Predict on new/test data
+predictions = model.predict(X_test)
+```
+
+---
+
+## 🚀 Future Improvements
+
+- Deploy the model via **Streamlit** or **Flask**
+- Integrate with **real-time flight data**
+- Experiment with advanced models (e.g., XGBoost, LightGBM)
+
+---
+
+## 📬 Contact
+
+📧 aparnasharma10010@gmail.com
+🔗 [LinkedIn](www.linkedin.com/in/apsh)
+
+---
 
 
-##   Future Work
-Deploy using Streamlit or Flask
-
-Try ensemble models or XGBoost
-
-Test on real-time data
 
 
-## Contact
-Email : aparnasharma10010@gmail.com
+
+
+
+
+
+
+
+
