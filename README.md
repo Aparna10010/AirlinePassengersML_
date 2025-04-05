@@ -1,7 +1,6 @@
-Absolutely! Here's a polished and professional **README.md** — ideal for showcasing your project on GitHub or your portfolio 👇
+
 
 ---
-
 # ✈️ Airline Customer Satisfaction Prediction
 
 This project focuses on predicting whether an airline passenger is satisfied with their experience based on various in-flight and service-related features. It combines **SQL-based data exploration**, **feature engineering**, **machine learning**, and **class imbalance handling** using **SMOTE**, all wrapped in a reusable ML pipeline.
